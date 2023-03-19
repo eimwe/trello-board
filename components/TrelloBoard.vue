@@ -45,6 +45,7 @@ const columns = ref<Column[]>([
     tasks: [],
   },
 ]);
+const alt = useKeyModifier("Alt");
 </script>
 
 <template>
@@ -65,7 +66,7 @@ const columns = ref<Column[]>([
           </header>
           <draggable
             v-model="column.tasks"
-            group="tasks"
+            :group="{ name: 'tasks', pull: alt ? 'clone' : true }"
             :animation="150"
             handle=".drag-handle"
             item-key="id"
