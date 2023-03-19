@@ -51,12 +51,13 @@ const columns = ref<Column[]>([
     <div v-for="column in columns" :key="column.id"
       class="bg-gray-200 p-5 rounded min-w-[250px]"
     >
-      <header>
+      <header class="font-bold mb-4">
         {{ column.title }}
       </header>
-      <p v-for="task in column.tasks" :key="task.id">
-        {{ task.title }}
-      </p>
+      <TrelloBoardTask v-for="task in column.tasks" :task="task" :key="task.id" />
+      <footer>
+        <button class="text-gray-500">+ Add A Card</button>
+      </footer>
     </div>
   </div>
 </template>
