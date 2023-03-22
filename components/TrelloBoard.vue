@@ -62,7 +62,7 @@ function createColumn() {
 </script>
 
 <template>
-  <div class="flex gap-4 items-start overflow-x-auto">
+  <div class="board flex gap-4 items-start overflow-x-auto">
     <draggable
       v-model="columns"
       group="columns"
@@ -116,3 +116,22 @@ function createColumn() {
     </button>
   </div>
 </template>
+
+<style>
+  .board {
+    padding-bottom: 2.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(203 213 225/0.2);
+  }
+
+  .board::-webkit-scrollbar {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: rgba(203 213 225/0.2);
+  }
+
+  .board::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+    background-color: rgba(226 232 240/0.2);
+  }
+</style>
